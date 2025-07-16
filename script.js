@@ -1,14 +1,23 @@
 // ======= Firebase Config =======
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAnD_kB11ABikFB63bgRKESn96OnGZukgQ",
-  authDomain: "pangchi-601af.firebaseapp.com",
-  projectId: "pangchi-601af",
-  storageBucket: "pangchi-601af.firebasestorage.app",
-  messagingSenderId: "182335204496",
-  appId: "1:182335204496:web:318c48e227691a14e2bc15",
-  measurementId: "G-DPHW8WBSD1"
-};
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCOWhJPc3kECTMzW-LzpRUaW-qOp1J2B6Q",
+    authDomain: "wrwrw-20bab.firebaseapp.com",
+    projectId: "wrwrw-20bab",
+    storageBucket: "wrwrw-20bab.firebasestorage.app",
+    messagingSenderId: "766527871512",
+    appId: "1:766527871512:web:8a45d92f352433f690c16d"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 
 const storage = firebase.storage();
 const database = firebase.database();
