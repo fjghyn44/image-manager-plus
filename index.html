@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Manager Plus</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    section { margin-bottom: 2rem; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; align-items: center; justify-content: space-between; margin: .5rem 0; }
+    img.preview { max-width: 80px; max-height: 80px; margin-right: .5rem; object-fit: cover; }
+    .image-entry { display: flex; }
+    #confirmDialog { 
+      background: #ffeeee; padding: 1rem; border: 1px solid #cc0000; 
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      display: none; z-index: 1000; width: 90%; max-width: 300px;
+    }
+    #overlay { 
+      display: none; position: fixed; top: 0; left: 0; 
+      width: 100%; height: 100%; background: rgba(0,0,0,0.5); 
+      z-index: 900;
+    }
+    @media (max-width: 600px) {
+      button, select, input[type="file"] { font-size: 1.2rem; padding: .5rem; width: 100%; margin-bottom: .5rem; }
+      li { flex-direction: column; align-items: flex-start; }
+      img.preview { margin-bottom: .5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Manager Plus</h1>
+
+  <section>
+    <input type="file" id="uploadInput" accept="image/*" />
+    <select id="pageSelector">
+      <option value="A">A 頁面</option>
+      <option value="B">B 頁面</option>
+      <option value="C">C 頁面</option>
+    </select>
+    <button onclick="uploadImage()">📤 上傳並預覽</button>
+  </section>
+
+  <section>
+    <h2>A 頁面</h2><ul id="page-A"></ul>
+    <h2>B 頁面</h2><ul id="page-B"></ul>
+    <h2>C 頁面</h2><ul id="page-C"></ul>
+  </section>
+
+  <section>
+    <select id="clearTarget">
+      <option value="A">A 頁面</option>
+      <option value="B">B 頁面</option>
+      <option value="C">C 頁面</option>
+    </select>
+    <button onclick="confirmClear()">🧹 清除頁面圖片</button>
+  </section>
+
+  <div id="overlay"></div>
+  <div id="confirmDialog">
+    <p>請輸入密碼以確認刪除：</p>
+    <input type="password" id="pwdInput" placeholder="密碼" />
+    <div style="margin-top:1rem; text-align:right;">
+      <button onclick="clearImages()">✅ 確認</button>
+      <button onclick="cancelClear()">❌ 取消</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
