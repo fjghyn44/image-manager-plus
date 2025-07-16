@@ -6,10 +6,9 @@ const firebaseConfig = {
   projectId: "pangchi-601af",
   storageBucket: "pangchi-601af.firebasestorage.app",
   messagingSenderId: "182335204496",
-  appId: "1:182335204496:web:fdb354f0b76efe6fe2bc15",
-  measurementId: "G-GB7GRSSYMN"
+  appId: "1:182335204496:web:318c48e227691a14e2bc15",
+  measurementId: "G-DPHW8WBSD1"
 };
-firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
 const database = firebase.database();
