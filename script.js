@@ -1,12 +1,13 @@
 // ======= Firebase Config =======
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "你的API_KEY",
-  authDomain: "你的專案.firebaseapp.com",
-  databaseURL: "https://你的專案.firebaseio.com",
-  projectId: "你的專案",
-  storageBucket: "你的專案.appspot.com",
-  messagingSenderId: "你的SENDER_ID",
-  appId: "你的APP_ID"
+  apiKey: "AIzaSyAnD_kB11ABikFB63bgRKESn96OnGZukgQ",
+  authDomain: "pangchi-601af.firebaseapp.com",
+  projectId: "pangchi-601af",
+  storageBucket: "pangchi-601af.firebasestorage.app",
+  messagingSenderId: "182335204496",
+  appId: "1:182335204496:web:fdb354f0b76efe6fe2bc15",
+  measurementId: "G-GB7GRSSYMN"
 };
 firebase.initializeApp(firebaseConfig);
 
